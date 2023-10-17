@@ -1,6 +1,6 @@
 import os
 from random import randint
-money = 0
+money = 10000
 int(money)
 at = 0
 int(at)
@@ -89,10 +89,41 @@ while way_left == False or way_center == False or way_right == False:
                 way_center = True
             else:
                 print("Такого выбора не предусматривалось возможно в будующем это исправят, ХОТЯ МЫ ОБА ЗНАЕМ ЧТО ТЫ ПРОСТО ГРЯЗНЫЙ ХАКЕР")
-                print("YOU DEAD YOU DEAD YOU DEAD YOU DEAD YOU DEAD YOU DEAD YOU DEAD YOU DEAD YOU DEAD АХАХАХАХАХАХАХАХАХАХАХАХАХАХАХ ИГРАЙ СНАЧАЛА")
+                print("YOU DEAD АХА ИГРАЙ СНАЧАЛА")
                 break
         else:
             print("Вы уже были на этой дороге")
+        print("Вас приветствуют в таверне и предлагают сыграть в кости. 1 - Да отичное предложение. 2 - Нет")
+        while True:
+            bet = int(input("Выбери ставку "))
+            if bet <= 0:
+                print("Нельзя поставить такую ставку")
+                input("Нажмите ENTER для продолжения")
+                break
+            if bet > money:
+                (f"У {pl_name} недстадочно денег для такой ставки")
+                input("Нажмите ENTER для продолжения")
+                break
+            user_turn = random.randint(1, 6)
+            casino_turn = random.randint(1, 6)
+
+            print("Игрок выбросил", user_turn)
+            print("Казино выбросил", casino_turn)
+
+            if casino_turn > user_turn:
+                print("Казино победил")
+                money -= 100
+            elif casino_turn < user_turn:
+                print("Игрок победил")
+                roney_user += 100
+            else:
+                print("Ничья")
+            breakk = int(input(f"{pl_name} хотите выйти. 1 - Да, 2 - Нет"))
+            if breakk == 1:
+                break
+            elif breakk == 2:
+                pass
+
     elif way == "3":
         if way_left == False:
             os.system('cls')
@@ -115,7 +146,7 @@ while way_left == False or way_center == False or way_right == False:
                     print("У вас нехватило денег и вы поехали дальше")
             else:
                 print("Такого выбора не предусматривалось возможно в будующем это исправят, ХОТЯ МЫ ОБА ЗНАЕМ ЧТО ТЫ ПРОСТО ГРЯЗНЫЙ ХАКЕР")
-                print("YOU DEAD YOU DEAD YOU DEAD YOU DEAD YOU DEAD YOU DEAD YOU DEAD YOU DEAD YOU DEAD АХАХАХАХАХАХАХАХАХАХАХАХАХАХАХ ИГРАЙ СНАЧАЛА")
+                print("YOU DEAD АХАХ ИГРАЙ СНАЧАЛА")
                 break
         else:
             print("Вы уже были на этой дороге")
